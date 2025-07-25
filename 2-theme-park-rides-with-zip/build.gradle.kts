@@ -7,3 +7,9 @@ tasks.register<Copy>("generateDescriptions") {
         "THEME_PARK_NAME" to "Grelephant's Wonder World"
     ))
 }
+
+tasks.register<Zip>("zipDescriptions") {
+    from(layout.buildDirectory.dir("descriptions"))
+    destinationDirectory = layout.buildDirectory
+    archiveFileName = "descriptions.zip"
+}
