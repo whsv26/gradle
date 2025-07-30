@@ -1,13 +1,11 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
-    // Defines a basic project lifecycle (build and clean tasks)
-    base
+    id("base")
 }
 
 tasks.register<Copy>("generateDescriptions") {
     group = "build"
-    description = "Generate descriptions"
     from("descriptions")
     into(layout.buildDirectory.dir("descriptions"))
     filter<ReplaceTokens>("tokens" to mapOf(
@@ -17,8 +15,7 @@ tasks.register<Copy>("generateDescriptions") {
 
 tasks.register<Zip>("zipDescriptions") {
     group = "build"
-    description = "Zip descriptions"
-    from(layout.buildDirectory.dir("descriptions"))
+    from(tasks.named("generateDescriptions"))
     destinationDirectory = layout.buildDirectory
     archiveFileName = "descriptions.zip"
 }
