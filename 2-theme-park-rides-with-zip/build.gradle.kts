@@ -1,8 +1,7 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
-    // Defines a basic project lifecycle (build and clean tasks)
-    base
+    base // Defines a basic project lifecycle (build and clean tasks)
 }
 
 tasks.register<Copy>("generateDescriptions") {
