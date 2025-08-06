@@ -1,0 +1,14 @@
+[versions]
+java = "17"
+spring-boot = "3.3.2"
+
+[libraries]
+spring-boot-dependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+
+[bundles]
+spring-boot-web = ["spring-boot-starter-web", "spring-boot-starter-actuator"]
