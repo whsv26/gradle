@@ -1,0 +1,1 @@
+rootProject.name = "11-theme-park-api-platform"
