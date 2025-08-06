@@ -1,0 +1,1 @@
+rootProject.name = "05-theme-park-rides-status-application"

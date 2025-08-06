@@ -1,1 +1,0 @@
-rootProject.name = "7-theme-park-api-java"

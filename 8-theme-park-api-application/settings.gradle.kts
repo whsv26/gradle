@@ -1,1 +1,0 @@
-rootProject.name = "8-theme-park-api-application"

@@ -1,1 +1,0 @@
-rootProject.name = "2-theme-park-rides-with-zip"

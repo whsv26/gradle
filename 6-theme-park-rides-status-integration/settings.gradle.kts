@@ -1,1 +1,0 @@
-rootProject.name = "6-theme-park-rides-status-integration"

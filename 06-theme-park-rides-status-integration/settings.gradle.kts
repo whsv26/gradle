@@ -1,0 +1,1 @@
+rootProject.name = "06-theme-park-rides-status-integration"
