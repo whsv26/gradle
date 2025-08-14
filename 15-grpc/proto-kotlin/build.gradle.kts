@@ -22,19 +22,6 @@ dependencies {
     // Provides protobuf marshalling logic for gRPC
     api(libs.grpc.protobuf)
 
-    // TODO: DO IT REALLY NEEDED
-    //
-    // Transitively provides "protobuf-java" functionality:
-    // 1. Message decoding (parseFrom)
-    // 2. Message encoding (toByteArray)
-    // 2. Equality, hashing, merging
-    //
-    // And additional functionality:
-    // 1. Protobuf to JSON converters
-    // 2. Timestamp/Duration utils
-    api(libs.protobuf.java.util)
-
-
     // - Kotlin-friendly generated code from .proto files
     // - Support for Kotlin idioms (null-safety, collections, etc.)
     // - Extensions and helpers that make using Protobufs in Kotlin more natural

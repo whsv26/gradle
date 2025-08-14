@@ -54,7 +54,7 @@ protobuf {
         artifact = libs.protoc.asProvider().get().toString()
     }
     plugins {
-        // Provides gRPC support for protoc via plugin extension
+        // Provides Java gRPC support for protoc via plugin extension
         // Registers a plugin globally by name ("grpc") and tells where to find its executable
         create("grpc") {
             artifact = libs.protoc.gen.grpc.java.get().toString()
