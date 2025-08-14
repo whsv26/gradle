@@ -50,13 +50,14 @@ dependencies {
 }
 
 kotlin {
-    // Use Java 8 toolchain for compatibility
+    // Ensures compatibility: your Kotlin code will run on JVMs that support Java 8
     jvmToolchain(8)
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
     kotlinOptions {
-        // Enable opt-in APIs like experimental coroutines features
+        // Allows using opt-in Kotlin APIs (marked with @RequiresOptIn)
+        // For using experimental APIs from libraries like kotlinx.coroutines, grpc-kotlin, etc.
         freeCompilerArgs = listOf("-opt-in=kotlin.RequiresOptIn")
     }
 }
@@ -111,7 +112,7 @@ publishing {
     }
     publications {
         create<MavenPublication>("kotlinProto") {
-            from(components["java"])
+            from(components["java"]) // Yes, for JVM target it is "java"
             artifactId = "proto-kotlin"
             groupId = "me.whsv26"
             version = "1.0.0"
