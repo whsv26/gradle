@@ -2,6 +2,9 @@ plugins {
     // For "api" configuration
     id("java-library")
 
+    // So you can push to mavenLocal()
+    id("maven-publish")
+
     // For java code generation from proto files
     alias(libs.plugins.protobuf)
 }
@@ -24,6 +27,7 @@ dependencies {
     // 1. Message decoding (parseFrom)
     // 2. Message encoding (toByteArray)
     // 2. Equality, hashing, merging
+    //
     // And additional functionality:
     // 1. Protobuf to JSON converters
     // 2. Timestamp/Duration utils
@@ -63,6 +67,20 @@ protobuf {
                 // to actually use "grpc" plugin when generating code
                 create("grpc")
             }
+        }
+    }
+}
+
+publishing {
+    repositories {
+        mavenLocal()
+    }
+    publications {
+        create<MavenPublication>("javaProto") {
+            from(components["java"])
+            artifactId = "proto-java"
+            groupId = "me.whsv26"
+            version = "1.0.0"
         }
     }
 }
